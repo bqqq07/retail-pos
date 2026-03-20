@@ -1,3 +1,9 @@
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'unsafe-dev-secret-key')
 from pathlib import Path
 import os
 
@@ -14,6 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'products',
+    'inventory',
     'core',
 ]
 
@@ -51,6 +60,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB', 'retail_pos'),
+        'USER': os.getenv('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'postgres'),
         'USER': os.getenv('POSTGRES_USER', 'retail_pos'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'retail_pos'),
         'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
