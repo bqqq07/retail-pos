@@ -2,7 +2,6 @@ from decimal import Decimal
 from io import BytesIO
 
 from django.test import TestCase
-from django.urls import reverse
 from openpyxl import Workbook
 from rest_framework.test import APIClient
 
