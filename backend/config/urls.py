@@ -5,4 +5,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/products/', include('products.urls')),
     path('api/v1/inventory/', include('inventory.urls')),
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
 ]
